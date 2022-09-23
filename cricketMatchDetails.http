@@ -1,0 +1,66 @@
+GET http://localhost:3000/players/
+
+###
+
+GET http://localhost:3000/players/2/
+
+{ 
+  playerId: 2,
+  playerName: "Joseph"
+}
+
+###
+
+PUT http://localhost:3000/players/2/
+
+{
+  "playerName": "Raju"
+}
+
+###
+
+GET http://localhost:3000/matches/18/
+
+{ 
+  matchId: 18,
+  match: "RR vs SRH",
+  year: 2011
+}
+
+###
+ 
+GET http://localhost:3000/players/2/matches
+
+[
+  { 
+    matchId: 1,
+    match: "SRH vs MI",
+    year: 2016
+  },
+
+  ...
+]
+
+###
+
+GET http://localhost:3000/matches/2/players
+
+[
+  { 
+    playerId: 2,
+    playerName: "Joseph"
+  },
+  ...
+]
+
+###
+
+GET http://localhost:3000/players/1/playerScores
+
+{
+  playerId: 1,
+  playerName: "Ram"
+  totalScore: 3453,
+  totalFours: 342,
+  totalSixes: 98
+}
