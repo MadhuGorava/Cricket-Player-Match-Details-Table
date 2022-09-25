@@ -132,7 +132,7 @@ Express.get("/players/:playerId/playerScores/", async (request, response) => {
       NATURAL JOIN player_details
     WHERE
       player_id = ${playerId};`;
-  const playerMatches = await db.all(getPlayerScoreQuery);
+  const playerMatches = await db.get(getPlayerScoreQuery);
   response.send(playerMatches);
 });
 
